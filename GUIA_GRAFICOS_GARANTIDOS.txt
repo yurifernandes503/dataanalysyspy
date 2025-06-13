@@ -1,0 +1,122 @@
+==========================================================
+GUIA DEFINITIVO PARA GRÁFICOS GARANTIDOS EM STREAMLIT
+==========================================================
+
+Este guia apresenta soluções para garantir que seus gráficos funcionem
+em qualquer ambiente, mesmo com limitações de bibliotecas ou configurações.
+
+----------------------------------------------------------
+ÍNDICE
+----------------------------------------------------------
+1. Diagnóstico de Problemas
+2. Soluções Garantidas
+3. Versões Alternativas
+4. Comandos de Instalação
+5. Solução de Problemas Comuns
+
+----------------------------------------------------------
+1. DIAGNÓSTICO DE PROBLEMAS
+----------------------------------------------------------
+
+Execute o script de diagnóstico para identificar problemas:
+
+    python diagnostico_graficos.py
+
+Este script verificará:
+- Versão do Python
+- Sistema operacional
+- Bibliotecas instaladas
+- Funcionalidade das bibliotecas gráficas
+- Configuração do Streamlit
+
+----------------------------------------------------------
+2. SOLUÇÕES GARANTIDAS
+----------------------------------------------------------
+
+Temos três versões que garantem funcionamento em diferentes cenários:
+
+a) graficos_garantidos.py - Sistema com múltiplos fallbacks
+   - Tenta 6 métodos diferentes de renderização
+   - Funciona mesmo se algumas bibliotecas falharem
+   
+   Executar: streamlit run graficos_garantidos.py
+
+b) graficos_ascii.py - Gráficos em ASCII puro
+   - Funciona em QUALQUER ambiente Python
+   - Zero dependências além de Streamlit e Pandas
+   - Ideal para ambientes muito restritos
+   
+   Executar: streamlit run graficos_ascii.py
+
+c) graficos_html_puro.py - Gráficos em HTML/CSS
+   - Visualizações diretas no navegador
+   - Não depende de bibliotecas gráficas
+   - Interativo e responsivo
+   
+   Executar: streamlit run graficos_html_puro.py
+
+----------------------------------------------------------
+3. VERSÕES ALTERNATIVAS
+----------------------------------------------------------
+
+Escolha a versão mais adequada ao seu ambiente:
+
+1. Ambiente completo com todas as bibliotecas:
+   - Use graficos_garantidos.py para gráficos interativos avançados
+
+2. Ambiente com limitações de bibliotecas:
+   - Use graficos_html_puro.py para visualizações no navegador
+
+3. Ambiente extremamente restrito:
+   - Use graficos_ascii.py para visualizações em texto
+
+----------------------------------------------------------
+4. COMANDOS DE INSTALAÇÃO
+----------------------------------------------------------
+
+Instalação completa (recomendada):
+    pip install streamlit pandas numpy plotly matplotlib altair seaborn
+
+Instalação mínima (garantida):
+    pip install streamlit pandas numpy
+
+Reinstalação de bibliotecas problemáticas:
+    pip uninstall plotly -y && pip install plotly==5.17.0
+    pip uninstall matplotlib -y && pip install matplotlib==3.7.1
+
+----------------------------------------------------------
+5. SOLUÇÃO DE PROBLEMAS COMUNS
+----------------------------------------------------------
+
+Problema: Gráficos não aparecem no Streamlit
+Solução: 
+    1. Limpe o cache: rm -rf ~/.streamlit
+    2. Use a versão HTML pura: streamlit run graficos_html_puro.py
+
+Problema: Erro ao importar bibliotecas gráficas
+Solução:
+    1. Verifique a instalação: pip list | grep plotly
+    2. Use a versão ASCII: streamlit run graficos_ascii.py
+
+Problema: Erros de JavaScript no console do navegador
+Solução:
+    1. Limpe o cache do navegador
+    2. Use a versão HTML pura: streamlit run graficos_html_puro.py
+
+Problema: Erros de backend no Matplotlib
+Solução:
+    1. Force o backend 'Agg': matplotlib.use('Agg')
+    2. Use a versão garantida: streamlit run graficos_garantidos.py
+
+----------------------------------------------------------
+CONCLUSÃO
+----------------------------------------------------------
+
+Este sistema foi projetado para garantir que você sempre tenha
+visualizações funcionais, independentemente das limitações do ambiente.
+
+Se todas as outras opções falharem, a versão ASCII funcionará em
+praticamente qualquer ambiente Python com Streamlit.
+
+Para suporte adicional, execute o diagnóstico e siga as recomendações
+específicas para o seu ambiente.

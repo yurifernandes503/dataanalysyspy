@@ -1,0 +1,49 @@
+================================================================================
+                    CORREÇÃO: GEMINI API KEY
+================================================================================
+
+PROBLEMA: GEMINI_API_KEY não configurada
+
+SOLUÇÕES (execute em ordem):
+
+SOLUÇÃO 1: Recriar arquivo .env.local
+--------------------------------------
+1. Deletar arquivo existente:
+   del .env.local
+
+2. Criar novo arquivo:
+   echo GEMINI_API_KEY=sua_chave_aqui > .env.local
+
+3. Verificar conteúdo:
+   type .env.local
+
+4. Reiniciar servidor:
+   Ctrl+C (parar)
+   npm run dev (iniciar)
+
+SOLUÇÃO 2: Verificar chave API
+------------------------------
+1. Ir para: https://makersuite.google.com/app/apikey
+2. Copiar chave API
+3. Substituir "sua_chave_aqui" pela chave real
+
+SOLUÇÃO 3: Verificar formato do arquivo
+---------------------------------------
+O arquivo .env.local deve conter EXATAMENTE:
+GEMINI_API_KEY=AIzaSyC...sua_chave_completa_aqui
+
+SEM espaços, SEM aspas, SEM quebras de linha extras
+
+SOLUÇÃO 4: Alternativa manual
+-----------------------------
+1. Criar arquivo .env.local manualmente no VS Code
+2. Adicionar linha: GEMINI_API_KEY=sua_chave_real
+3. Salvar arquivo
+4. Reiniciar npm run dev
+
+VERIFICAÇÃO:
+-----------
+Após correção, testar conexão clicando em "Testar Conexão"
+Deve aparecer: ✅ Conectado
+
+================================================================================

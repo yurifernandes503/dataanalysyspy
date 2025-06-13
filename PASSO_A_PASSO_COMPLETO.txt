@@ -1,0 +1,344 @@
+================================================================================
+                    DATAINSIGHT AI - GUIA PASSO A PASSO COMPLETO
+================================================================================
+
+📋 ÍNDICE:
+1. Preparação do Ambiente
+2. Instalação das Dependências
+3. Configuração da API Gemini
+4. Execução da Aplicação
+5. Como Usar Cada Funcionalidade
+6. Solução de Problemas
+7. Estrutura do Código
+
+================================================================================
+                            1. PREPARAÇÃO DO AMBIENTE
+================================================================================
+
+PASSO 1.1: VERIFICAR PYTHON
+----------------------------
+1. Abrir terminal/prompt de comando
+2. Digitar: python --version
+3. Deve mostrar Python 3.8 ou superior
+4. Se não tiver Python, baixar de: https://python.org/downloads/
+
+PASSO 1.2: CRIAR PASTA DO PROJETO
+----------------------------------
+1. Criar pasta: mkdir datainsight-ai-python
+2. Entrar na pasta: cd datainsight-ai-python
+3. Verificar localização: pwd (Linux/Mac) ou cd (Windows)
+
+================================================================================
+                            2. INSTALAÇÃO DAS DEPENDÊNCIAS
+================================================================================
+
+PASSO 2.1: INSTALAR BIBLIOTECAS PRINCIPAIS
+-------------------------------------------
+Copiar e colar este comando no terminal:
+
+pip install streamlit pandas numpy plotly google-generativeai openpyxl
+
+PASSO 2.2: VERIFICAR INSTALAÇÃO
+--------------------------------
+python -c "import streamlit, pandas, plotly; print('✅ Bibliotecas instaladas!')"
+
+PASSO 2.3: CRIAR ARQUIVO REQUIREMENTS.TXT
+------------------------------------------
+Criar arquivo requirements.txt com o conteúdo:
+streamlit==1.29.0
+pandas==2.1.3
+numpy==1.24.3
+plotly==5.17.0
+google-generativeai==0.3.2
+openpyxl==3.1.2
+
+================================================================================
+                            3. CONFIGURAÇÃO DA API GEMINI
+================================================================================
+
+PASSO 3.1: OBTER CHAVE API
+---------------------------
+1. Ir para: https://makersuite.google.com/app/apikey
+2. Fazer login com conta Google
+3. Clicar em "Create API Key"
+4. Copiar a chave (formato: AIzaSyC...)
+
+PASSO 3.2: CONFIGURAR CHAVE (MÉTODO 1 - VARIÁVEL DE AMBIENTE)
+--------------------------------------------------------------
+Windows:
+set GEMINI_API_KEY=AIzaSyC...sua_chave_aqui
+
+Linux/Mac:
+export GEMINI_API_KEY=AIzaSyC...sua_chave_aqui
+
+PASSO 3.3: CONFIGURAR CHAVE (MÉTODO 2 - ARQUIVO SECRETS)
+---------------------------------------------------------
+1. Criar pasta: mkdir .streamlit
+2. Criar arquivo: .streamlit/secrets.toml
+3. Adicionar conteúdo:
+   GEMINI_API_KEY = "AIzaSyC...sua_chave_aqui"
+
+================================================================================
+                            4. EXECUÇÃO DA APLICAÇÃO
+================================================================================
+
+PASSO 4.1: CRIAR ARQUIVO APP.PY
+--------------------------------
+1. Copiar todo o código do arquivo app.py fornecido
+2. Salvar como app.py na pasta do projeto
+3. Verificar se o arquivo foi salvo corretamente
+
+PASSO 4.2: EXECUTAR APLICAÇÃO
+------------------------------
+1. No terminal, na pasta do projeto, digitar:
+   streamlit run app.py
+
+2. Aguardar mensagem:
+   "You can now view your Streamlit app in your browser."
+   "Local URL: http://localhost:8501"
+
+PASSO 4.3: ACESSAR NO NAVEGADOR
+--------------------------------
+1. Abrir navegador (Chrome, Firefox, Edge)
+2. Ir para: http://localhost:8501
+3. A aplicação deve carregar automaticamente
+
+================================================================================
+                            5. COMO USAR CADA FUNCIONALIDADE
+================================================================================
+
+FUNCIONALIDADE 1: CARREGAR DADOS
+---------------------------------
+Opção A - Dados de Exemplo:
+1. Clicar em "🎲 Dados de Exemplo" na barra lateral
+2. Aguardar carregamento
+3. Dados serão gerados automaticamente
+
+Opção B - Upload de Arquivo:
+1. Clicar em "Browse files" na barra lateral
+2. Selecionar arquivo CSV, Excel ou JSON
+3. Aguardar upload e processamento
+
+FUNCIONALIDADE 2: DASHBOARD
+----------------------------
+1. Ir para aba "📊 Dashboard"
+2. Visualizar métricas principais (cards coloridos)
+3. Analisar estatísticas numéricas
+4. Verificar qualidade dos dados
+
+FUNCIONALIDADE 3: GRÁFICOS
+---------------------------
+1. Ir para aba "📈 Gráficos"
+2. Visualizar 6 tipos de gráficos:
+   - Vendas por Região (Barras)
+   - Distribuição por Categoria (Pizza)
+   - Vendas por Mês (Linha)
+   - Vendas vs Satisfação (Scatter)
+   - Distribuição de Vendas (Histograma)
+   - Vendas por Produto (Box Plot)
+3. Interagir com gráficos (zoom, hover, etc.)
+
+FUNCIONALIDADE 4: IA INSIGHTS
+------------------------------
+1. Ir para aba "🤖 IA"
+2. Verificar status da IA (deve estar verde)
+3. Clicar em "🚀 Análise Completa" para análise automática
+4. Ou fazer pergunta personalizada na caixa de texto
+5. Clicar em "🤖 Perguntar"
+
+FUNCIONALIDADE 5: EXPLORAR DADOS
+---------------------------------
+1. Ir para aba "📋 Dados"
+2. Usar filtros para explorar dados
+3. Ajustar número de linhas exibidas
+4. Fazer download dos dados filtrados
+
+================================================================================
+                            6. SOLUÇÃO DE PROBLEMAS
+================================================================================
+
+PROBLEMA 1: GRÁFICOS NÃO APARECEM
+----------------------------------
+Solução:
+1. Verificar se dados foram carregados
+2. Atualizar página (F5)
+3. Verificar console do navegador (F12)
+4. Reinstalar plotly: pip install --upgrade plotly
+
+PROBLEMA 2: ERRO "MODULE NOT FOUND"
+------------------------------------
+Solução:
+1. Reinstalar dependências: pip install -r requirements.txt
+2. Verificar versão do Python: python --version
+3. Usar ambiente virtual se necessário
+
+PROBLEMA 3: IA NÃO FUNCIONA
+----------------------------
+Solução:
+1. Verificar chave API do Gemini
+2. Testar conexão com internet
+3. Verificar se chave está correta
+4. Tentar reconfigurar a chave
+
+PROBLEMA 4: ERRO DE UPLOAD
+---------------------------
+Solução:
+1. Verificar formato do arquivo (CSV, Excel, JSON)
+2. Verificar se arquivo não está corrompido
+3. Tentar com arquivo menor
+4. Verificar encoding (UTF-8)
+
+PROBLEMA 5: APLICAÇÃO NÃO INICIA
+---------------------------------
+Solução:
+1. Verificar se está na pasta correta
+2. Verificar se app.py existe
+3. Reinstalar streamlit: pip install --upgrade streamlit
+4. Verificar porta 8501 não está em uso
+
+================================================================================
+                            7. ESTRUTURA DO CÓDIGO
+================================================================================
+
+SEÇÃO 1: IMPORTAÇÕES E CONFIGURAÇÕES
+-------------------------------------
+- Importa todas as bibliotecas necessárias
+- Configura página do Streamlit
+- Define CSS customizado
+
+SEÇÃO 2: FUNÇÕES AUXILIARES
+----------------------------
+- configure_gemini(): Configura API do Gemini
+- generate_sample_data(): Gera dados de exemplo
+- create_charts(): Cria todos os gráficos
+- analyze_with_gemini(): Faz análise com IA
+
+SEÇÃO 3: INTERFACE SIDEBAR
+---------------------------
+- Status da IA
+- Upload de arquivos
+- Botão para dados de exemplo
+- Informações do dataset
+
+SEÇÃO 4: PROCESSAMENTO DE ARQUIVOS
+-----------------------------------
+- Lê arquivos CSV, Excel, JSON
+- Armazena dados no session_state
+- Trata erros de upload
+
+SEÇÃO 5: INTERFACE PRINCIPAL
+-----------------------------
+- 4 abas principais (Dashboard, Gráficos, IA, Dados)
+- Cada aba com funcionalidades específicas
+- Layout responsivo
+
+SEÇÃO 6: TELA INICIAL
+----------------------
+- Apresentação da aplicação
+- Instruções de uso
+- Botão para começar
+
+================================================================================
+                            8. COMANDOS ÚTEIS
+================================================================================
+
+COMANDOS BÁSICOS:
+-----------------
+# Instalar dependências
+pip install streamlit pandas numpy plotly google-generativeai openpyxl
+
+# Executar aplicação
+streamlit run app.py
+
+# Parar aplicação
+Ctrl + C (no terminal)
+
+# Verificar versões
+pip list
+
+# Atualizar biblioteca
+pip install --upgrade nome_da_biblioteca
+
+COMANDOS DE DIAGNÓSTICO:
+------------------------
+# Verificar Python
+python --version
+
+# Verificar pip
+pip --version
+
+# Testar importações
+python -c "import streamlit; print('Streamlit OK')"
+
+# Verificar porta
+netstat -an | findstr 8501
+
+================================================================================
+                            9. DICAS IMPORTANTES
+================================================================================
+
+DICA 1: PERFORMANCE
+--------------------
+- Use dados com menos de 10.000 registros para melhor performance
+- Feche outras abas do navegador
+- Use dados de exemplo para testes iniciais
+
+DICA 2: SEGURANÇA
+------------------
+- Nunca compartilhe sua chave API do Gemini
+- Use arquivo secrets.toml para chaves
+- Não commite chaves no Git
+
+DICA 3: DESENVOLVIMENTO
+-----------------------
+- Use Ctrl+C para parar a aplicação
+- Salve alterações e recarregue a página
+- Use st.rerun() para atualizar interface
+
+DICA 4: DADOS
+--------------
+- CSV deve ter cabeçalhos na primeira linha
+- Excel deve ter dados na primeira planilha
+- JSON deve ser array de objetos
+
+================================================================================
+                            10. PRÓXIMOS PASSOS
+================================================================================
+
+APÓS INSTALAÇÃO BÁSICA:
+------------------------
+1. Testar com dados de exemplo
+2. Fazer upload de seus próprios dados
+3. Explorar todas as funcionalidades
+4. Configurar IA para insights
+5. Exportar relatórios
+
+MELHORIAS FUTURAS:
+------------------
+- Adicionar mais tipos de gráficos
+- Implementar machine learning
+- Criar relatórios automáticos
+- Adicionar mais formatos de dados
+- Melhorar interface mobile
+
+================================================================================
+                                    FIM
+================================================================================
+
+📞 SUPORTE:
+Se tiver problemas, verifique:
+1. Versão do Python (3.8+)
+2. Instalação das dependências
+3. Configuração da chave API
+4. Conexão com internet
+
+✅ CHECKLIST FINAL:
+□ Python 3.8+ instalado
+□ Dependências instaladas
+□ Chave API configurada
+□ Arquivo app.py criado
+□ Aplicação executando
+□ Gráficos funcionando
+□ IA respondendo
+
+🎉 PARABÉNS! Sua aplicação está funcionando!

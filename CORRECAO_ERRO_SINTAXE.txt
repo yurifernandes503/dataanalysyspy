@@ -1,0 +1,78 @@
+================================================================================
+                    CORREÇÃO DO ERRO DE SINTAXE
+================================================================================
+
+O erro que você está vendo é um erro de sintaxe na linha 1344 do arquivo app.py:
+
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+O problema está nesta linha:
+help=f"Valores entre {min_val:.0f} e {max_val:.0f}"
+
+================================================================================
+                            POSSÍVEIS SOLUÇÕES
+================================================================================
+
+SOLUÇÃO 1: ADICIONAR VÍRGULA NO FINAL
+-------------------------------------
+Se esta linha faz parte de uma lista de parâmetros, pode estar faltando uma vírgula:
+
+ERRADO:
+help=f"Valores entre {min_val:.0f} e {max_val:.0f}"
+algum_outro_parametro=valor
+
+CORRETO:
+help=f"Valores entre {min_val:.0f} e {max_val:.0f}",
+algum_outro_parametro=valor
+
+SOLUÇÃO 2: CORRIGIR PARÊNTESES
+-----------------------------
+Pode haver parênteses desbalanceados:
+
+ERRADO:
+range_vals = st.slider(
+    f"📏 Range de {numeric_col}:",
+    min_val, max_val, (min_val, max_val),
+    help=f"Valores entre {min_val:.0f} e {max_val:.0f}"
+    help=f"Valores entre {min_val:.0f} e {max_val:.0f}"
+
+CORRETO:
+range_vals = st.slider(
+    f"📏 Range de {numeric_col}:",
+    min_val, max_val, (min_val, max_val),
+    help=f"Valores entre {min_val:.0f} e {max_val:.0f}"
+)
+
+SOLUÇÃO 3: USAR VERSÃO ULTRA SIMPLES
+-----------------------------------
+Se as correções acima não funcionarem, use o arquivo app_ultra_simples.py
+que forneci. Ele é uma versão simplificada que não depende de bibliotecas
+externas para gráficos e usa apenas os recursos nativos do Streamlit.
+
+================================================================================
+                            COMO PROCEDER
+================================================================================
+
+1. TENTE CORRIGIR O ERRO:
+   - Abra o arquivo app.py
+   - Vá para a linha 1344
+   - Verifique se está faltando uma vírgula ou se há parênteses desbalanceados
+   - Faça a correção necessária
+
+2. USE O SCRIPT DE CORREÇÃO:
+   - Execute: python corrigir_erro_linha_1344.py
+   - Este script tentará identificar e corrigir o erro automaticamente
+
+3. USE A VERSÃO ULTRA SIMPLES:
+   - Se as soluções acima não funcionarem, use:
+   - streamlit run app_ultra_simples.py
+
+================================================================================
+                            DICA IMPORTANTE
+================================================================================
+
+O erro específico "Perhaps you forgot a comma?" geralmente indica que você
+tem uma lista de parâmetros ou argumentos e está faltando uma vírgula entre
+eles. Verifique cuidadosamente a linha 1344 e as linhas ao redor.
+
+================================================================================

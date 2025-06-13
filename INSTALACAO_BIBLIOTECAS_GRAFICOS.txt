@@ -1,0 +1,66 @@
+================================================================================
+                    INSTALAÇÃO DAS BIBLIOTECAS DE GRÁFICOS
+================================================================================
+
+Para garantir que os gráficos funcionem, instale TODAS as bibliotecas:
+
+COMANDO ÚNICO (RECOMENDADO):
+pip install streamlit pandas numpy plotly matplotlib seaborn openpyxl
+
+OU INSTALAR UMA POR VEZ:
+pip install plotly
+pip install matplotlib
+pip install seaborn
+
+VERIFICAR INSTALAÇÃO:
+python -c "import plotly; print('Plotly OK')"
+python -c "import matplotlib; print('Matplotlib OK')"
+python -c "import seaborn; print('Seaborn OK')"
+
+================================================================================
+                            COMO EXECUTAR
+================================================================================
+
+1. Instalar bibliotecas (comando acima)
+2. Executar: streamlit run app_graficos_robustos.py
+3. Clicar em "Gerar Dataset Avançado"
+4. Ir para aba "Gráficos Robustos"
+5. Clicar em "Gerar Gráficos Robustos"
+
+================================================================================
+                            GARANTIAS DO SISTEMA
+================================================================================
+
+✅ MÚLTIPLAS BIBLIOTECAS: Plotly, Matplotlib, Seaborn, Streamlit nativo
+✅ FALLBACKS AUTOMÁTICOS: Se uma falhar, tenta a próxima
+✅ DETECÇÃO AUTOMÁTICA: Verifica quais bibliotecas estão disponíveis
+✅ TRATAMENTO DE ERROS: Cada gráfico tem seu próprio try/except
+✅ STATUS EM TEMPO REAL: Mostra o progresso e status de cada biblioteca
+✅ LOGS DETALHADOS: Informa exatamente o que está acontecendo
+
+================================================================================
+                            FUNCIONALIDADES
+================================================================================
+
+🎨 GRÁFICOS AVANÇADOS:
+- Barras 3D com cores
+- Pizza interativa
+- Linha múltipla
+- Scatter plot colorido
+- Histograma com box plot
+- Ranking horizontal
+
+📊 DATASET COMPLEXO:
+- 500+ registros realistas
+- 20+ colunas de dados
+- Correlações complexas
+- Sazonalidade
+- Múltiplas categorias
+
+🔧 SISTEMA ROBUSTO:
+- Interface moderna
+- Métricas avançadas
+- Filtros dinâmicos
+- Explorador de dados
+
+================================================================================

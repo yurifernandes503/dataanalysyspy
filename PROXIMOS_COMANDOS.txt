@@ -1,0 +1,25 @@
+================================================================================
+                    PRÓXIMOS PASSOS - EXECUTE EM SEQUÊNCIA
+================================================================================
+
+# 1. INSTALAR DEPENDÊNCIAS ESPECÍFICAS
+npm install @google/generative-ai recharts lucide-react @radix-ui/react-tabs @radix-ui/react-select @radix-ui/react-alert-dialog
+
+# 2. CONFIGURAR CHAVE API GEMINI
+echo GEMINI_API_KEY=sua_chave_aqui > .env.local
+
+# 3. CRIAR PASTA COMPONENTS
+mkdir components
+
+# 4. COPIAR TODOS OS ARQUIVOS DO CÓDIGO
+# (Você precisará criar os arquivos manualmente ou usar o código fornecido)
+
+# 5. TESTAR O PROJETO
+npm run dev
+
+# 6. ABRIR NO NAVEGADOR
+# http://localhost:3000
+
+================================================================================
+IMPORTANTE: Substitua "sua_chave_aqui" pela sua chave real do Gemini API!
+================================================================================
